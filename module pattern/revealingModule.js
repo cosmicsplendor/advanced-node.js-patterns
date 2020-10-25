@@ -12,4 +12,4 @@ const imports = (() => {
     // making the export immutable
     return Object.freeze(exports)
 })()
-console.log(imports)
+module.exports = imports
