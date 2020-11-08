@@ -1,4 +1,3 @@
-const { exec } = require("child_process")
 const { platform } = require("os")
 if (platform === "windows") {
     console.log("Press 'Ctrl + C' to terminate the stream")

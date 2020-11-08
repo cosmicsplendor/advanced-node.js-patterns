@@ -1,13 +1,5 @@
 const { Readable } = require("stream")
-const getRandomStr = (len) => {
-    const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    let randomString = ''
-    for (let i = 0; i < len; i++) {
-        let randomPos = Math.floor(Math.random() * charSet.length)
-        randomString += charSet.substring(randomPos,randomPos + 1)
-    }
-    return randomString
-}
+const getRandomStr = require("../utils/getRandStr")
 
 class RandomStream extends Readable {
     constructor(options) {
