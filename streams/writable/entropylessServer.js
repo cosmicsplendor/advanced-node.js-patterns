@@ -2,7 +2,6 @@ const { createServer } = require("http")
 const getRandomStr = require("../utils/getRandStr")
 
 const startStreaming = res => {
-
     while (Math.random() < 0.9) {
         const chunk = getRandomStr(
             (1024 * 16) - 1
