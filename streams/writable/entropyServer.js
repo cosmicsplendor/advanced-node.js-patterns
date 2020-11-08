@@ -1,6 +1,5 @@
 const { createServer } = require("http")
 const getRandomStr = require("../utils/getRandStr")
-console.log(getRandomStr(Math.floor(Math.random() * 10)))
 
 const server = createServer((req, res) => {
     res.writeHead(200, {
