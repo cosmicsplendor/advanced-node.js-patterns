@@ -1,6 +1,9 @@
 const { createReadStream } = require("fs")
 const { createGzip } = require("zlib")
 const { request } = require("http")
+const { basename } = require("path")
+
+const filepath = process.argv[2]
 
 const req = request({
     hostname: "localhost",
@@ -10,14 +13,14 @@ const req = request({
     headers: {
         "Content-Type": "application/octet-stream",
         "Content-Encoding": "gzip",
-        "X-Filename": "image.jpg",
+        "X-Filename": `${basename(filepath)}`,
     }
 }, res => {
     console.log(`Got response with status: ${res.statusCode}`)
 })
 
-createReadStream("image.jpg")
+createReadStream(filepath)
     .pipe(createGzip())
     .pipe(req)
     .on("finish", () => console.log("File uploaded to the server"))
-    .on("error", () => console.log("An error occured"))
+    .on("error", e => console.log(`An error occured: ${e.message}`))
