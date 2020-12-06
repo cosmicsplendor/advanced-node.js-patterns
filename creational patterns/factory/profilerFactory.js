@@ -7,9 +7,9 @@ class Profiler {
       this.lastTime = process.hrtime()
     }
     end () {
-      const diff = process.hrtime(this.lastTime)
-      console.log(`Timer "${this.label}" took ${diff[0]} seconds ` +
-        `and ${diff[1]} nanoseconds.`)
+      const [secs, nsecs] = process.hrtime(this.lastTime)
+      console.log(`Timer "${this.label}" took ${secs} seconds ` +
+        `and ${nsecs} nanoseconds.`)
     }
 }
 const mockProfiler = {
