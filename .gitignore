@@ -1,3 +1,4 @@
 node_modules
 structural patterns/levelup/src/db
 behavioral patterns/strategy/data
+behavioral patterns/template/data
