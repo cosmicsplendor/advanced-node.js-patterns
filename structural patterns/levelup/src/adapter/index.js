@@ -36,6 +36,7 @@ fs.writeFile('./src/db/file.txt', 'Hello!', () => {
 
 // trying to read a missing file
 fs.readFile('./src/db/missing.txt', { encoding: 'utf8' }, (err, res) => {
+    // expecting an error
     console.error(err)
 })
 
