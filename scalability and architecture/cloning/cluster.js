@@ -3,6 +3,7 @@ const { createServer } = require("http")
 const { platform, cpus } = require("os")
 const { once } = require("events")
 
+// autocannon, a node based utility, can be used to stress test this app
 
 if (cluster.isMaster) {
     const availableCpus = cpus()
